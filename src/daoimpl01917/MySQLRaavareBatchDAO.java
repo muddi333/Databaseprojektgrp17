@@ -14,7 +14,7 @@ public class MySQLRaavareBatchDAO implements RaavareBatchDAO{
 
 	@Override
 	public RaavareBatchDTO getRaavareBatch(int rbId) throws DALException {
-		ResultSet rs = Connector.doQuery("SELECT * FROM raavarebatch WHERE r_id = " + rbId);
+		ResultSet rs = Connector.doQuery("SELECT * FROM raavarebatch WHERE rb_id = " + rbId);
 		try {
 			if (!rs.first()) throw new DALException("Raavarebatchen " + rbId+ " findes ikke");
 			return new RaavareBatchDTO(rs.getInt("rb_id"), rs.getInt("raavare_id"), rs.getDouble("maengde"));
