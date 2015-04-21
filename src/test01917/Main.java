@@ -1,8 +1,10 @@
 package test01917;
 
 import daoimpl01917.MySQLOperatoerDAO;
+import daoimpl01917.MySQLReceptKompDAO;
 import daointerfaces01917.DALException;
 import dto01917.OperatoerDTO;
+import dto01917.ReceptKompDTO;
 
 import java.sql.SQLException;
 
@@ -45,7 +47,15 @@ public class Main {
 		
 		System.out.println("Operatoer nummer 5:");
 		try { System.out.println(opr.getOperatoer(5)); }
-		catch (DALException e) { System.out.println(e.getMessage()); }		
+		catch (DALException e) { System.out.println(e.getMessage()); }	
+		
+		
+		System.out.println("-----------------------------------------------------");
+		
+		System.out.println("min test");
+		MySQLReceptKompDAO hallo = new MySQLReceptKompDAO();
+		try { System.out.println(hallo.getReceptKomp(1, 1)); }
+		catch (DALException e) { System.out.println(e.getMessage()); }
 		
 	}
 }
