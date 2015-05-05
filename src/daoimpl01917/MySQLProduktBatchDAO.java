@@ -29,7 +29,7 @@ public class MySQLProduktBatchDAO implements ProduktBatchDAO {
 		ResultSet rs = Connector.doQuery("SELECT * FROM produktbatch");
 		try
 		{
-			while (rs.next()) 
+			while (rs.next())
 			{
 				list.add(new ProduktBatchDTO(rs.getInt("pb_id"), rs.getInt("status"), rs.getInt("recept_id")));
 			}
