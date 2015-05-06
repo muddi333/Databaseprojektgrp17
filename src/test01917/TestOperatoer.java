@@ -46,7 +46,6 @@ public class TestOperatoer {
 			assertEquals(4, oprOBJ.getOprId());
 		} catch (DALException e) { System.out.println(e.getMessage()); }
 	}
-
 	@Test
 	public void testupdateOperatoer(){
 		OperatoerDTO oprDTO;
@@ -60,7 +59,6 @@ public class TestOperatoer {
 			assertEquals(4, oprOBJ.getOprId());
 		} catch (DALException e) { System.out.println(e.getMessage()); }
 	}
-
 	@Test
 	public void testgetOperatoerList() throws DALException{
 		List<OperatoerDTO> oprOBJ = opr.getOperatoerList();

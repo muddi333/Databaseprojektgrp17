@@ -39,19 +39,23 @@ public class TestProduktBatch {
 		assertEquals(prbOBJ.size(), 6);
 	}
 	@Test
-	public void testcreateProduktBatch() throws DALException{
+	public void testcreateProduktBatch(){
 		ProduktBatchDTO test;
+		try{
 		prb.createProduktBatch(test= new ProduktBatchDTO(6, 1, 1));
 		ProduktBatchDTO prbOBJ = prb.getProduktBatch(6);
 		assertEquals(1, prbOBJ.getStatus());
 		assertEquals(1, prbOBJ.getReceptId());
 		assertEquals(6, prbOBJ.getPbId());
+		} catch (DALException e) { System.out.println(e.getMessage()); }
 	}
 	@Test
-	public void testupdateProduktBatch() throws DALException{
+	public void testupdateProduktBatch(){
 		ProduktBatchDTO test;
+		try{
 		prb.updateProduktBatch(test= new ProduktBatchDTO(6, 1, 2)); //opdatere recept_id til 2
 		ProduktBatchDTO prbOBJ = prb.getProduktBatch(6);
 		assertEquals(2, prbOBJ.getReceptId());
+		} catch (DALException e) { System.out.println(e.getMessage()); }
 	}
 }
