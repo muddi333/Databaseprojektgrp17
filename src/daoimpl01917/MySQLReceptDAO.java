@@ -41,7 +41,7 @@ public class MySQLReceptDAO implements ReceptDAO{
 	@Override
 	public void createRecept(ReceptDTO recept) throws DALException {
 		Connector.doUpdate(
-				"INSERT INTO recept(recept_id, recept_navn,) VALUES " +
+				"INSERT INTO recept(recept_id, recept_navn) VALUES " +
 						"(" + recept.getReceptId() + ", '" + recept.getReceptNavn() + "')");	
 	}
 
@@ -49,7 +49,7 @@ public class MySQLReceptDAO implements ReceptDAO{
 	public void updateRecept(ReceptDTO recept) throws DALException {
 		Connector.doUpdate(
 				"UPDATE recept SET  recept_navn = '" + recept.getReceptNavn()+ 
-				"' WHERE raavare_id = " + recept.getReceptId());	
+				"' WHERE recept_id = " + recept.getReceptId());
 
 	}
 
